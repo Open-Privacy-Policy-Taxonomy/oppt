@@ -1,0 +1,577 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OPPT v1.0 Attribute Schema",
+  "description": "Machine-readable schema for OPPT category attributes",
+  "version": "1.0",
+  "categories": {
+    "FIRST_PARTY": {
+      "description": "First-party data collection and use",
+      "attributes": {
+        "does_does_not": {
+          "type": "string",
+          "enum": ["Does", "Does Not"],
+          "description": "Whether the company does or does not perform this practice"
+        },
+        "action": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Collect on website",
+              "Collect in mobile app",
+              "Track on website",
+              "Track in mobile app",
+              "Use",
+              "Receive from third parties"
+            ]
+          }
+        },
+        "personal_information_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Contact",
+              "Location",
+              "Demographics",
+              "Financial",
+              "Health",
+              "Biometric identifiers",
+              "Computer Information",
+              "IP Address",
+              "Cookies and Tracking Elements",
+              "User Online Activities",
+              "User Profile",
+              "Social Media Data",
+              "Survey Data",
+              "Generic Personal Information",
+              "Other"
+            ]
+          }
+        },
+        "purpose": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Basic Service/Feature",
+              "Additional Service/Feature",
+              "Personalization/Customization",
+              "Marketing",
+              "Analytics/Research",
+              "Service Operation and Security",
+              "Legal Compliance",
+              "Merger/Acquisition",
+              "Other"
+            ]
+          }
+        },
+        "collection_mode": {
+          "type": "string",
+          "enum": ["Explicit", "Implicit", "Both", "Unspecified"]
+        },
+        "identifiability": {
+          "type": "string",
+          "enum": ["Identifiable", "Pseudonymous", "Aggregated", "Anonymous", "Unspecified"]
+        },
+        "user_type": {
+          "type": "string",
+          "enum": ["User with Account", "User without Account", "All Users", "Unspecified"]
+        }
+      }
+    },
+    "THIRD_PARTY": {
+      "description": "Third-party sharing and collection",
+      "attributes": {
+        "does_does_not": {
+          "type": "string",
+          "enum": ["Does", "Does Not"]
+        },
+        "action": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Share",
+              "Sell",
+              "Receive",
+              "Allow collection by third parties",
+              "Disclose for business purposes"
+            ]
+          }
+        },
+        "third_party_entity": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Named specific entity",
+              "Unnamed specific entity",
+              "Advertising networks",
+              "Analytics providers",
+              "Social media",
+              "Payment processors",
+              "Service providers",
+              "Affiliates",
+              "Government/legal",
+              "Other"
+            ]
+          }
+        },
+        "personal_information_type": {
+          "type": "array",
+          "description": "Same as FIRST_PARTY"
+        },
+        "purpose": {
+          "type": "array",
+          "description": "Same as FIRST_PARTY"
+        },
+        "identifiability": {
+          "type": "string",
+          "description": "Same as FIRST_PARTY"
+        }
+      }
+    },
+    "TRACKING": {
+      "description": "Tracking technologies and targeted advertising",
+      "attributes": {
+        "does_does_not": {
+          "type": "string",
+          "enum": ["Does", "Does Not"]
+        },
+        "tracking_technology": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "First-party cookies",
+              "Third-party cookies",
+              "Web beacons/pixels",
+              "Device fingerprinting",
+              "Local storage",
+              "SDKs",
+              "Session replay",
+              "Other"
+            ]
+          }
+        },
+        "tracking_purpose": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Analytics",
+              "Advertising/targeting",
+              "Personalization",
+              "Security/fraud prevention",
+              "Service functionality",
+              "Social media integration",
+              "Other"
+            ]
+          }
+        },
+        "signal_response": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Honors DNT",
+              "Does not honor DNT",
+              "Honors GPC",
+              "Does not honor GPC",
+              "Unspecified"
+            ]
+          }
+        },
+        "user_control": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Browser settings",
+              "Cookie banner",
+              "Account settings",
+              "Third-party opt-out",
+              "None mentioned"
+            ]
+          }
+        }
+      }
+    },
+    "USER_CHOICE": {
+      "description": "User options for controlling data practices",
+      "attributes": {
+        "choice_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Opt-in",
+              "Opt-out",
+              "Account settings",
+              "Communication preferences",
+              "Cookie preferences",
+              "Delete account",
+              "Other"
+            ]
+          }
+        },
+        "choice_scope": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "First-party use",
+              "Third-party sharing",
+              "Marketing",
+              "Targeted advertising",
+              "Data sale",
+              "All processing"
+            ]
+          }
+        },
+        "choice_mechanism": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Link provided",
+              "Email request",
+              "Account dashboard",
+              "Contact form",
+              "Phone",
+              "Unspecified"
+            ]
+          }
+        }
+      }
+    },
+    "USER_ACCESS": {
+      "description": "Rights to access, correct, delete, or port data",
+      "attributes": {
+        "access_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Access/view",
+              "Correction/rectification",
+              "Deletion/erasure",
+              "Portability/export",
+              "Restriction of processing",
+              "Object to processing"
+            ]
+          }
+        },
+        "access_mechanism": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Web form",
+              "Email",
+              "Account dashboard",
+              "Toll-free number",
+              "Authorized agent",
+              "Unspecified"
+            ]
+          }
+        },
+        "verification_required": {
+          "type": "string",
+          "enum": ["Yes", "No", "Unspecified"]
+        }
+      }
+    },
+    "RETENTION": {
+      "description": "Data retention periods and practices",
+      "attributes": {
+        "retention_period": {
+          "type": "string",
+          "enum": [
+            "Specific time period",
+            "Account lifetime",
+            "As required by law",
+            "As long as necessary",
+            "Unspecified"
+          ]
+        },
+        "retention_purpose": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Service provision",
+              "Legal compliance",
+              "Tax/financial records",
+              "Dispute resolution",
+              "Research",
+              "Other"
+            ]
+          }
+        }
+      }
+    },
+    "SECURITY": {
+      "description": "Data security measures",
+      "attributes": {
+        "security_measure": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Encryption",
+              "Access controls",
+              "Physical security",
+              "Employee training",
+              "Audits/assessments",
+              "Incident response",
+              "Generic measures",
+              "Other"
+            ]
+          }
+        },
+        "breach_notification": {
+          "type": "string",
+          "enum": ["Mentioned", "Not mentioned"]
+        }
+      }
+    },
+    "POLICY_CHANGE": {
+      "description": "How policy updates are communicated",
+      "attributes": {
+        "notification_method": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Email",
+              "Website notice",
+              "In-app notification",
+              "Updated effective date",
+              "Material changes highlighted",
+              "None specified"
+            ]
+          }
+        },
+        "user_consent": {
+          "type": "string",
+          "enum": [
+            "Continued use = consent",
+            "Explicit consent required",
+            "Unspecified"
+          ]
+        }
+      }
+    },
+    "INTL_SPECIFIC": {
+      "description": "International transfers and specific audiences",
+      "attributes": {
+        "audience_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Children (COPPA)",
+              "Students (FERPA)",
+              "International users",
+              "EU residents",
+              "Other specific audience"
+            ]
+          }
+        },
+        "international_transfer": {
+          "type": "string",
+          "enum": ["Yes", "No", "Unspecified"]
+        },
+        "transfer_mechanism": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Standard contractual clauses",
+              "Adequacy decision",
+              "Binding corporate rules",
+              "Consent",
+              "Unspecified"
+            ]
+          }
+        }
+      }
+    },
+    "REGIONAL": {
+      "description": "Jurisdiction-specific procedures and rights",
+      "attributes": {
+        "jurisdiction": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "California (CCPA/CPRA)",
+              "Virginia (VCDPA)",
+              "Colorado (CPA)",
+              "Connecticut (CTDPA)",
+              "Utah (UCPA)",
+              "EU/EEA (GDPR)",
+              "UK (UK GDPR)",
+              "Brazil (LGPD)",
+              "Canada (PIPEDA)",
+              "Other US state",
+              "Other country"
+            ]
+          }
+        },
+        "content_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Rights enumeration",
+              "Request procedure",
+              "Verification process",
+              "Response timeline",
+              "Legal basis",
+              "DPA contact",
+              "Authorized agent",
+              "Non-discrimination",
+              "Appeal process"
+            ]
+          }
+        },
+        "additional_rights": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Right to know",
+              "Right to delete",
+              "Right to correct",
+              "Right to opt-out of sale",
+              "Right to opt-out of sharing",
+              "Right to limit sensitive data use",
+              "Right to data portability",
+              "Right to non-discrimination"
+            ]
+          }
+        }
+      }
+    },
+    "SALE_SHARING": {
+      "description": "Data sale and cross-context behavioral advertising",
+      "attributes": {
+        "does_does_not": {
+          "type": "string",
+          "enum": ["Does sell/share", "Does not sell/share", "Conditional"]
+        },
+        "sale_sharing_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Sale for monetary consideration",
+              "Sharing for cross-context behavioral advertising",
+              "Both",
+              "Unspecified"
+            ]
+          }
+        },
+        "opt_out_mechanism": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Do Not Sell link",
+              "Global Privacy Control (GPC)",
+              "Account settings",
+              "Email request",
+              "None provided"
+            ]
+          }
+        },
+        "data_categories_sold_shared": {
+          "type": "array",
+          "description": "Same values as personal_information_type"
+        }
+      }
+    },
+    "AUTOMATED_DECISIONS": {
+      "description": "Profiling and algorithmic decision-making",
+      "attributes": {
+        "does_does_not": {
+          "type": "string",
+          "enum": ["Does", "Does Not", "Unspecified"]
+        },
+        "decision_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Profiling",
+              "Credit/financial decisions",
+              "Employment decisions",
+              "Content moderation",
+              "Fraud detection",
+              "Personalization",
+              "Eligibility determinations",
+              "Other"
+            ]
+          }
+        },
+        "human_involvement": {
+          "type": "string",
+          "enum": [
+            "Fully automated",
+            "Human review available",
+            "Human in the loop",
+            "Unspecified"
+          ]
+        },
+        "opt_out_available": {
+          "type": "string",
+          "enum": ["Yes", "No", "Upon request", "Unspecified"]
+        },
+        "legal_effects": {
+          "type": "string",
+          "enum": ["Produces legal effects", "Significantly affects", "Neither", "Unspecified"]
+        }
+      }
+    },
+    "SENSITIVE_DATA": {
+      "description": "Special category and sensitive data handling",
+      "attributes": {
+        "does_does_not": {
+          "type": "string",
+          "enum": ["Does collect", "Does not collect", "With consent only"]
+        },
+        "sensitive_data_type": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Biometric",
+              "Health",
+              "Genetic",
+              "Precise geolocation",
+              "Racial/ethnic origin",
+              "Religious beliefs",
+              "Sexual orientation",
+              "Citizenship/immigration",
+              "Financial (account/card numbers)",
+              "Social security number",
+              "Children's data",
+              "Other"
+            ]
+          }
+        },
+        "legal_framework": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "GDPR Article 9",
+              "CCPA Sensitive PI",
+              "BIPA",
+              "HIPAA",
+              "State biometric laws",
+              "Other"
+            ]
+          }
+        },
+        "consent_mechanism": {
+          "type": "string",
+          "enum": ["Explicit consent", "Opt-in", "Opt-out", "Unspecified"]
+        }
+      }
+    },
+    "OTHER": {
+      "description": "Administrative and structural content",
+      "attributes": {
+        "other_type": {
+          "type": "string",
+          "enum": [
+            "Introductory/Generic",
+            "Definitions",
+            "Contact information",
+            "Effective date",
+            "Business transfers",
+            "Legal disclaimers",
+            "Miscellaneous"
+          ]
+        }
+      }
+    }
+  }
+}

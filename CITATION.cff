@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use OPPT in your research, please cite it as below."
+authors:
+  - family-names: "Brackin"
+    given-names: "Thomas"
+    email: "tebrackin@outlook.com"
+title: "Open Privacy Policy Taxonomy (OPPT)"
+version: "1.0"
+date-released: 2026-01-23
+url: "https://github.com/Open-Privacy-Policy-Taxonomy/oppt"
+repository-code: "https://github.com/Open-Privacy-Policy-Taxonomy/oppt"
+license: "CC-BY-NC-4.0"
+keywords:
+  - privacy
+  - privacy-policies
+  - nlp
+  - taxonomy
+  - dark-patterns
+  - legal-nlp
+abstract: >-
+  The Open Privacy Policy Taxonomy (OPPT) is a 14-category framework
+  for analyzing privacy policy disclosures, extending OPP-115 to address
+  GDPR, CCPA/CPRA, and emerging AI regulations. Includes a dataset of
+  3,651 annotated segments from 123 companies.
+preferred-citation:
+  type: misc
+  authors:
+    - family-names: "Brackin"
+      given-names: "Thomas"
+  title: "Jurisdiction as Concealment: How Privacy Policies Hide Substantive Disclosures in Regional Compliance Sections"
+  year: 2026
+  url: "https://arxiv.org/abs/XXXX.XXXXX"
