@@ -4,7 +4,7 @@
 
 [![Dataset on HuggingFace](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/Open-Privacy-Policy-Taxonomy/oppt-privacy-policies)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![arXiv](https://img.shields.io/badge/arXiv-cs.CY-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2601.20792-b31b1b.svg)](https://arxiv.org/abs/2601.20792)
 
 ---
 
@@ -98,7 +98,7 @@ If you use OPPT in your research, please cite:
   title={Jurisdiction as Concealment: How Privacy Policies Hide Substantive Disclosures in Regional Compliance Sections},
   author={Brackin, Thomas},
   year={2026},
-  eprint={XXXX.XXXXX},
+  eprint={2601.20792},
   archivePrefix={arXiv},
   primaryClass={cs.CY}
 }
